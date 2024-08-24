@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+     <img src="assets/freshcart-logo.svg" alt="logo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          @if (isLogin == true) {
+            <a class="nav-link" routerLink="home" routerLinkActive="bg-success text-white rounded" >Home</a>
+            <a class="nav-link" routerLink="cart" routerLinkActive="bg-success text-white rounded">Cart</a>
+            <a class="nav-link" routerLink="categories" routerLinkActive="bg-success text-white rounded">Categories</a>
+            <a class="nav-link" routerLink="brands" routerLinkActive="bg-success text-white rounded" >Brands</a>
+            <a class="nav-link" routerLink="products"  routerLinkActive="bg-success text-white rounded">Products</a>
+          }
+          
+        </div>
+          <div class="d-flex gap-3 align-items-center">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            @if (isLogin == false){
+              <a class="nav-link" routerLink="register" routerLinkActive="bg-success text-white rounded">Register</a>
+              <a class="nav-link" routerLink="login" routerLinkActive="bg-success text-white rounded">Login</a>
+            
+            }
+           @else {
+            <a (click)="_AuthService.logOut()" class="nav-link" routerLink="logout" routerLinkActive="bg-success text-white rounded">Logout</a>
+           }
+          </div>
+        </div>
+      </div>
+  </nav>
